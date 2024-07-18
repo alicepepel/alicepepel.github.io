@@ -1,1 +1,155 @@
-Hello World
+<!DOCTYPE html>
+<html lang="ru">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/index.css">
+  <title>Карта проекта
+  </title>
+  <body>
+    <div class="header"><a href="https://spiks.tech/" target="blank" rel="nofollow"><img class="logo" src="assets/media/spiks-logo.svg"></a></div>
+    <div class="main">
+      <h1 class="title visually-hidden">Карта проекта</h1>
+      <header class="navbar page-header"><a class="logotype" href="javascript:void(0)">Marketplace</a>
+        <form class="search">
+          <input class="search__input" type="text" placeholder="Search for a product, flower, etc">
+        </form>
+        <fieldset class="navbar tabs-bar" form="form">
+          <label class="tab active">
+            <input class="tab__input" type="checkbox" name="buds"/><span class="tab__text">Buds</span>
+          </label>
+          <label class="tab">
+            <input class="tab__input" type="checkbox" name="edible"/><span class="tab__text">Edible</span>
+          </label>
+          <label class="tab">
+            <input class="tab__input" type="checkbox" name="nonedible"/><span class="tab__text">Non Edible</span>
+          </label>
+          <label class="tab">
+            <input class="tab__input" type="checkbox" name="concentrate"/><span class="tab__text">Concentrate</span>
+          </label>
+        </fieldset>
+      </header>
+      <form class="form" id="form">
+        <div class="navbar range-bar">
+          <div class="range">
+            <div class="range__item range__item_price"><span class="range__title">Price Range</span>
+              <div id="priceSlider"></div><span class="range__snap range__snap_lower" id="price-snap-value-lower"></span><span class="range__snap range__snap_upper" id="price-snap-value-upper"></span>
+            </div>
+            <div class="range__item range__item_thc"><span class="range__title">ТНС, %</span>
+              <div id="thcSlider"></div><span class="range__snap range__snap_lower" id="thc-snap-value-lower"></span><span class="range__snap range__snap_upper" id="thc-snap-value-upper"></span>
+            </div>
+            <div class="range__item range__item_cbd"><span class="range__title">CBD, %</span>
+              <div id="cbdSlider"></div><span class="range__snap range__snap_lower" id="cbd-snap-value-lower"></span><span class="range__snap range__snap_upper" id="cbd-snap-value-upper"></span>
+            </div>
+          </div>
+          <div class="sort active">
+            <button class="sort__button" type="button"></button>
+            <div class="sort__wrapper"><span class="sort__title">Sort by:</span>
+              <ul class="sort__list">
+                <li class="sort__item"><a class="sort__link" href="#">Date (New first)</a></li>
+                <li class="sort__item"><a class="sort__link" href="#">Date (Old first)</a></li>
+                <li class="sort__item"><a class="sort__link" href="#">Price (High first)</a></li>
+                <li class="sort__item"><a class="sort__link" href="#">Price (Low first)</a></li>
+                <li class="sort__item"><a class="sort__link" href="#">Total THC (High first)</a></li>
+                <li class="sort__item"><a class="sort__link" href="#">Total THC (Low first)</a></li>
+                <li class="sort__item"><a class="sort__link" href="#">Total CBD (High first)</a></li>
+                <li class="sort__item"><a class="sort__link" href="#">Total CBD (Low first)</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="navbar result-bar">
+          <div class="result"><span class="result__num">1034,5</span> Results</div>
+          <ul class="badge">
+            <li class="badge__item" data-num="num1">100% Indica</li>
+            <li class="badge__item" data-num="num3">>50% Indica</li>
+            <li class="badge__item" data-num="num5">Indoor</li>
+            <li class="badge__item" data-num="num11">Flower</li>
+            <!--li.badge__item Michigan-->
+            <!--li.badge__item SellerSeller-->
+            <!--li.badge__item Distributor-->
+          </ul>
+        </div>
+        <div class="filter">
+          <fieldset class="filter__fieldset active">
+            <legend class="filter__title">Classification</legend>
+            <div class="filter__wrapper">
+              <label class="checkbox">
+                <input class="checkbox__input" type="checkbox" name="100indica" data-num="num1" checked="checked"/><span class="checkbox__mark"></span><span class="checkbox__text">100% Indica</span>
+              </label>
+              <label class="checkbox">
+                <input class="checkbox__input" type="checkbox" name="100sativa" data-num="num2"/><span class="checkbox__mark"></span><span class="checkbox__text">100% Sativa</span>
+              </label>
+              <label class="checkbox">
+                <input class="checkbox__input" type="checkbox" name="50indica" data-num="num3" checked="checked"/><span class="checkbox__mark"></span><span class="checkbox__text">&gt;50% Indica</span>
+              </label>
+              <label class="checkbox">
+                <input class="checkbox__input" type="checkbox" name="50sativa" data-num="num4"/><span class="checkbox__mark"></span><span class="checkbox__text">&gt;50% Sativa</span>
+              </label>
+            </div>
+          </fieldset>
+          <fieldset class="filter__fieldset active">
+            <legend class="filter__title">Production Method</legend>
+            <div class="filter__wrapper">
+              <label class="checkbox">
+                <input class="checkbox__input" type="checkbox" name="idoor" data-num="num5" checked="checked"/><span class="checkbox__mark"></span><span class="checkbox__text">Indoor</span>
+              </label>
+              <label class="checkbox">
+                <input class="checkbox__input" type="checkbox" name="outdoor" data-num="num6"/><span class="checkbox__mark"></span><span class="checkbox__text">Outdoor</span>
+              </label>
+              <label class="checkbox">
+                <input class="checkbox__input" type="checkbox" name="greenhouse" data-num="num7"/><span class="checkbox__mark"></span><span class="checkbox__text">Greenhouse</span>
+              </label>
+              <label class="checkbox">
+                <input class="checkbox__input" type="checkbox" name="deprivation" data-num="num8"/><span class="checkbox__mark"></span><span class="checkbox__text">Light Deprivation</span>
+              </label>
+              <label class="checkbox">
+                <input class="checkbox__input" type="checkbox" name="mixed" data-num="num9"/><span class="checkbox__mark"></span><span class="checkbox__text">Mixed Light</span>
+              </label>
+              <label class="checkbox">
+                <input class="checkbox__input" type="checkbox" name="other" data-num="num10"/><span class="checkbox__mark"></span><span class="checkbox__text">Other</span>
+              </label>
+            </div>
+          </fieldset>
+          <fieldset class="filter__fieldset">
+            <legend class="filter__title">Size</legend>
+            <div class="filter__wrapper">
+              <label class="checkbox">
+                <input class="checkbox__input" type="checkbox" name="flower" data-num="num11" checked="checked"/><span class="checkbox__mark"></span><span class="checkbox__text">Flower</span>
+              </label>
+              <label class="checkbox">
+                <input class="checkbox__input" type="checkbox" name="pr-flower" data-num="num12"/><span class="checkbox__mark"></span><span class="checkbox__text">Pre-Roll Flower</span>
+              </label>
+              <label class="checkbox">
+                <input class="checkbox__input" type="checkbox" name="pr-infused" data-num="num13"/><span class="checkbox__mark"></span><span class="checkbox__text">Pre-Roll Infused</span>
+              </label>
+              <label class="checkbox">
+                <input class="checkbox__input" type="checkbox" name="pr-leaf" data-num="num14"/><span class="checkbox__mark"></span><span class="checkbox__text">Pre-Roll Leaf</span>
+              </label>
+              <label class="checkbox">
+                <input class="checkbox__input" type="checkbox" name="shake" data-num="num15"/><span class="checkbox__mark"></span><span class="checkbox__text">Shake</span>
+              </label>
+              <label class="checkbox">
+                <input class="checkbox__input" type="checkbox" name="smalls" data-num="num16"/><span class="checkbox__mark"></span><span class="checkbox__text">Smalls</span>
+              </label>
+              <label class="checkbox">
+                <input class="checkbox__input" type="checkbox" name="trim" data-num="num17"/><span class="checkbox__mark"></span><span class="checkbox__text">Trim</span>
+              </label>
+              <label class="checkbox">
+                <input class="checkbox__input" type="checkbox" name="second-shake" data-num="num18"/><span class="checkbox__mark"></span><span class="checkbox__text">Shake</span>
+              </label>
+              <label class="checkbox">
+                <input class="checkbox__input" type="checkbox" name="keef" data-num="num19"/><span class="checkbox__mark"></span><span class="checkbox__text">Keef</span>
+              </label>
+              <label class="checkbox">
+                <input class="checkbox__input" type="checkbox" name="frozen" data-num="num20"/><span class="checkbox__mark"></span><span class="checkbox__text">Fresh Frozen</span>
+              </label>
+            </div>
+          </fieldset>
+        </div>
+      </form>
+    </div>
+    <div class="footer"><a href="https://spiks.tech/feedback/" target="blank" rel="nofollow">покумекать</a></div>
+  </body>
+  <script src="js/index.js"></script>
+</html>
